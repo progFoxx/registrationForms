@@ -8,6 +8,10 @@ form = cgi.FieldStorage()
 имя = form.getfirst("TEXT_2", "не задано")
 фамилия = html.escape(фамилия)
 имя = html.escape(имя)
+run = True
+r = 0
+while run == True:
+    r += 1
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
@@ -24,3 +28,4 @@ print("<p>имя: {}</p>".format(имя))
 
 print("""</body>
         </html>""")
+
