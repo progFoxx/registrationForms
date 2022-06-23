@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  max-width: 1024px; /*максимальная ширина может иметь другое значение*/
+  padding: 0 15px;
+  margin: 0 auto;
+  background-color: #FF6347 ;
+}
+.logo {
+  float: left;
+  display : block;
+}
+nav {
+  float: right;
+
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block; /*один из способов разместить элементы в строку*/
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 15px;
+  margin: 0 auto;
+}
+nav a {
+  text-decoration: none;
+  line-height: 38px;
+}
+body {
+ background-color: #FFDAB9;
+}
+.logo img { width: 60px; height: 60px;}
+
+title {
+display: block;
+
+
+
+}
