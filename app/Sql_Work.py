@@ -1,3 +1,3 @@
-import mysql
-import mysql.connector
-mysql.connector.connect(host='localhost',database='mysql',user='root',password='')
+import sqlite3
+
+conn = sqlite3.connect('orders.db')

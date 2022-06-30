@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 import cgi
-import html
-import pymysql
+import random
+import time
+from sqlite3Work import *
+
 
 form = cgi.FieldStorage()
-фамилия = form.getfirst("TEXT_1", "не задано")
-имя = form.getfirst("TEXT_2", "не задано")
-фамилия = html.escape(фамилия)
-имя = html.escape(имя)
-run = True
-r = 0
-while run == True:
-    r += 1
+text1 = form.getfirst("TEXT_1", "не задано")
+text2 = form.getfirst("TEXT_2", "не задано")
+idf = random.randint(0,99999999)
+
+
+clientInfo = (idf,text1,text2,"11^23")
+
+cur.execute("INSERT INTO Clients VALUES(?, ?, ?, ?);",clientInfo)
+conn.commit()
+
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
@@ -23,9 +27,8 @@ print("""<!DOCTYPE HTML>
         <body>""")
 
 print("<h1>Обработка данных форм!</h1>")
-print("<p>фамилия: {}</p>".format(фамилия))
-print("<p>имя: {}</p>".format(имя))
-
+print("<p>Id: {}</p>".format(idf))
+print("<p>имя: {}</p>".format(text1))
+print("<p>фамилия: {}</p>".format(text2))
 print("""</body>
         </html>""")
-
